@@ -32,11 +32,14 @@ tutorialApp.controller('LessonController', ['$scope', function($scope) {
 
     // navigate bw pages
     $scope.back = function() {
-      if ($scope.curr_lesson >= 1) {
+      if (curr_sublesson >= 1) {
+        curr_sublesson -= 1;
+      } else if ($scope.curr_lesson >= 1) {
         $scope.curr_lesson -= 1;
-        console.log($scope.curr_lesson);
       }
+      updateContent();
     }
+
     $scope.next = function() {
       if (curr_sublesson < max_sublesson-1) {
         curr_sublesson += 1;
@@ -44,7 +47,10 @@ tutorialApp.controller('LessonController', ['$scope', function($scope) {
         $scope.curr_lesson += 1;
         curr_sublesson = 0;
       }
+      updateContent();
+    }
 
+    function updateContent() {
       $scope.sublessonname = $scope.lesson.sublessons[$scope.curr_lesson].slname;
       $scope.content = $scope.lesson.sublessons[$scope.curr_lesson].content[curr_sublesson];
       console.log($scope.curr_lesson + " " + curr_sublesson);
