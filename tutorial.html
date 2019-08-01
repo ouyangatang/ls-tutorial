@@ -31,15 +31,16 @@
             <h1>{{sublessonname}}</h1>
           </nav>
           <nav class="section lesson">
-            <h2>{{lessonname}}</h2><hr>
+            <h2>LESSON {{curr_lesson+1}} IN {{lesson.name}}</h2><hr>
           </nav>
           <nav class="section content">
             {{content}}
           </nav>
-          <div class="section row pagination">
-            <button type="button" class="col-3 btn btn-outline-primary" disabled>Back</button>
-            <div class="col-6 page">Lesson {{lessonnum}} of {{totallessonnum}}</div>
-            <button type="button" class="col-3 btn btn-primary">Next</button>
+          <div class="row pagination section">
+            <div class="col-4">
+              <button type="button" class="btn btn-outline-secondary back" ng-click="back()">Back</button>
+            </div>
+            <button type="button" class="col-8 btn btn-primary" ng-click="next()">Continue</button>
           </div>
         </div>
         <div class="workspace">

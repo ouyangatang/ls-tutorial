@@ -8,44 +8,52 @@ html {
   height: 100vh;
   width: 400px;
   z-index: 100;
-  margin: 24px 0;
+  /* margin: 24px 0; */
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.15);
 }
 .section {
   margin: 8px 32px;
 }
+.home {
+  margin-top: 24px;
+}
 .home i, span {
   display: inline;
   vertical-align:middle;
-  color: #B8C1CE;
+  color: #C1CAD1;
 }
 .sublesson {
   margin-top: 20px;
-}
-.content {
-  margin-top: 20px;
+  color: #2F3D51;
 }
 .lesson h2 {
   text-transform:uppercase;
   font-size: 12px;
   font-weight:bold;
+  color: #6c757d;
+}
+.content {
+  margin-top: 20px;
+  /* background-color: green; */
+  height: calc(100% - 270px);
+  overflow: scroll;
+  font-size: 14px;
+  color: #6c757d;
 }
 .pagination {
   position: absolute;
   bottom: 24px;
-  left: 48px;
-  width: 328px;
+  left: 32px;
+  width: 352px;
   margin: 0 auto;
   padding: inherit;
-
 }
-.page {
-  text-align: center;
-  margin: 10px 0;
-  height: inherit;
+button.back {
+  /* margin-right: 10px; */
+  width: 100%;
 }
-
 /* RIGHT SIDE */
 .workspace {
   width: calc(100% - 400px);
-  background-color: red;
+  /* background-color: red; */
 }
