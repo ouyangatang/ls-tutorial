@@ -1,6 +1,6 @@
 'use strict';
 
-var tutorialApp = angular.module('tutorialApp', []);
+var tutorialApp = angular.module('tutorialApp', ['ngSanitize']);
 
 tutorialApp.controller('LessonController', ['$scope', function($scope) {
 
@@ -10,7 +10,7 @@ tutorialApp.controller('LessonController', ['$scope', function($scope) {
       sublessons: [ //sl = sublesson name
         {
           slname:"Hello World",
-          content:["In this first exercise, you'll learn how to instantiate a Tracer. What is Instantiation? To instantiate is to create an instance of an object. An instantiated object is given a name and created in memory or on disk using the structure described within a class declaration. What is a Tracer? Tracers let you track and measure spans of execution in a distributed software system. You can instrument almost anything with a tracer - a method in your software, a service call, a network request, a shell command execution, a script, and any other thing that can happen in a computer system. Once you instrument something with tracers, you can monitor how long it takes to complete, you can observe the system activity taking place within a span, or you can trace how it progresses through your system.",
+          content:["In this first exercise, you'll learn how to instantiate a Tracer. <h4>What is Instantiation? </h4>To instantiate is to create an instance of an object. An instantiated object is given a name and created in memory or on disk using the structure described within a class declaration. What is a Tracer? Tracers let you track and measure spans of execution in a distributed software system. You can instrument almost anything with a tracer - a method in your software, a service call, a network request, a shell command execution, a script, and any other thing that can happen in a computer system. Once you instrument something with tracers, you can monitor how long it takes to complete, you can observe the system activity taking place within a span, or you can trace how it progresses through your system.",
           "A tracer is a marker for a point in time in execution. Tracers always come in pairs: an entry tracer, which delimits the beginning of a span, and a corresponding exit tracer, which closes the span. A span, therefore, is the interval of execution delimited by two corresponding tracers. Spans can be nested, which means that a span can contain layers of other spans. The root of a span tree is called a trace."]
         },
         {

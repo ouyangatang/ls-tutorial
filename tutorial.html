@@ -2,10 +2,10 @@
 <html ng-app="tutorialApp" ng-controller="LessonController" lang="en">
   <head>
     <title>LS Interactive Tutorial</title>
-    <link rel="stylesheet" href="style.css">
 
     <!-- Angular -->
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular-sanitize.js"></script>
 
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -18,10 +18,12 @@
     <!-- Material Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
+      <link rel="stylesheet" href="style.css">
   </head>
   <body>
     <div class="container-fluid">
       <div class="row">
+        <!-- Tutorial Side Bar -->
         <div class="tutorial">
           <nav class="section home">
             <a href="home.html">
@@ -35,9 +37,9 @@
           <nav class="section lesson">
             <h2>LESSON {{curr_lesson+1}} IN {{lesson.name}}</h2><hr>
           </nav>
-          <nav class="section content">
-            {{content}}
-          </nav>
+          <div class="section content">
+            <p ng-bind-html="content"></p>
+          </div>
           <div class="row pagination section">
             <div class="col-4">
               <button type="button" class="btn btn-outline-secondary back" ng-click="back()">Back</button>
@@ -45,14 +47,22 @@
             <button type="button" class="col-8 btn btn-primary" ng-click="next()">Continue</button>
           </div>
         </div>
-        <div class="workspace">
-          <div class="row">
-            <div class="col-6">
-              code iframe goes here
-            </div>
-            <div class="col-6">
-              ls trace iframe goes here
-            </div>
+
+        <!-- Workspace Panels -->
+        <div class="workspace row no-gutters">
+          <div class="glitch-embed-wrap col-6">
+            <iframe
+              src="https://glitch.com/embed/#!/embed/py-flask-ls?path=&previewSize=0"
+              allow="geolocation; microphone; camera; midi; vr; encrypted-media"
+              style="height: 100%; width: 100%; border: 0;">
+            </iframe>
+          </div>
+          <div class="ls-embed-wrap col-6">
+              <iframe
+                  src="http://localhost:10000/test-project/developer-mode-embed"
+                  title="devmode"
+                  style="height: 100%; width: 100%; border: 0;">
+              </iframe>
           </div>
         </div>
       </div>

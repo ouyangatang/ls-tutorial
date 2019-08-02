@@ -46,8 +46,8 @@ html {
 .pagination {
   position: absolute;
   bottom: 24px;
-  left: 32px;
-  width: 352px;
+  left: 12px;
+  width: 364px;
   margin: 0 auto;
   padding: inherit;
 }
@@ -58,7 +58,18 @@ button.back {
 /* RIGHT SIDE */
 .workspace {
   width: calc(100% - 400px);
-  /* background-color: red; */
+  background-color: #2F3D51;
+}
+.workspace .col-6 {
+  height: 100vh;
+  padding: 10px;
+}
+.workspace .col-6:first-child {
+  padding-right: 0px;
+}
+.workspace div iframe {
+  /* margin: 20px; */
+  border-radius: 4px;
 }
 
 /* Home Page */
