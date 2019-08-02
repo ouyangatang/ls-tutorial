@@ -22,6 +22,9 @@ html {
   vertical-align:middle;
   color: #C1CAD1;
 }
+.home a:hover {
+  text-decoration: none;
+}
 .sublesson {
   margin-top: 20px;
   color: #2F3D51;
@@ -56,4 +59,12 @@ button.back {
 .workspace {
   width: calc(100% - 400px);
   /* background-color: red; */
+}
+
+/* Home Page */
+.container {
+  max-width: 960px;
+}
+.pricing-header {
+  max-width: 800px;
 }
